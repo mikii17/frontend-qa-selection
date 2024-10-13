@@ -1,3 +1,7 @@
+<!-- <script setup lang="ts"></script> -->
+
 <template>
-  <h1 class="bg-red-500">Hello World</h1>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
