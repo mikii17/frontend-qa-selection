@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:verify": "cypress verify"
+    "cy:verify": "cypress verify",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",

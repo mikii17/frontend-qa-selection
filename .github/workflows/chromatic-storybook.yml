@@ -1,0 +1,32 @@
+name: Component Visual Regression Tests
+
+on: push
+
+jobs:
+  component_visual_regression:
+    name: Run Component Visual Regression
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Generate .nuxt
+        run: pnpm nuxt generate
+
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_COMPONENT_PROJECT_TOKEN }}

@@ -1,5 +1,3 @@
-import "cypress-xpath";
-
 describe("Home Page Tests", () => {
   context("Desktop Viewport (1200 X 800)", () => {
     beforeEach(() => {

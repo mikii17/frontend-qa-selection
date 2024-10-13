@@ -1,5 +1,3 @@
-import "cypress-xpath";
-
 describe("Password Recovery Tests", () => {
   context("Desktop Viewport (1200 X 800)", () => {
     beforeEach(() => {
