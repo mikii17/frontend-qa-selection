@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import Navbar from "../Navbar.vue";
+import Divider from "../Divider.vue";
 
 const meta = {
-  title: "Molecules/Navbar",
-  component: Navbar,
+  title: "Atomic/Divider",
+  component: Divider,
   parameters: {
     layout: "centered",
     backgrounds: {
@@ -20,11 +20,11 @@ const meta = {
       ],
     },
   },
-  tags: [],
-} satisfies Meta<typeof Navbar>;
+  tags: ["autodocs"],
+} satisfies Meta<typeof Divider>;
 
 export default meta;
-type Story = StoryObj<typeof Navbar>;
+type Story = StoryObj<typeof Divider>;
 
 export const Default: Story = {
   args: {},

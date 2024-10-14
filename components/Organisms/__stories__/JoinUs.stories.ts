@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import JoinUs from "../components/Molecules/JoinUs.vue";
+import JoinUs from "../JoinUs.vue";
 
 const meta = {
-  title: "components/JoinUs",
+  title: "Organisms/JoinUs",
   component: JoinUs,
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
 } satisfies Meta<typeof JoinUs>;
 
 export default meta;

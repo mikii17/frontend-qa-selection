@@ -2,6 +2,7 @@ describe("Home Page Tests", () => {
   context("Desktop Viewport (1200 X 800)", () => {
     beforeEach(() => {
       cy.viewport(1200, 800); // Desktop viewport
+      cy.wait(4000);
       cy.visit("/"); // Assuming the home page is at the root path
     });
     /* ==== Test Created with Cypress Studio ==== */

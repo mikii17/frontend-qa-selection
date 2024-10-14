@@ -1,3 +1,3 @@
 <template>
-  <MoleculesHero />
+  <OrganismsHero />
 </template>

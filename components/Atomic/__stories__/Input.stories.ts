@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import Input from "../components/Atomic/Input.vue";
+import Input from "../Input.vue";
 
 const meta = {
   title: "Atomic/Input",
@@ -20,7 +20,6 @@ const meta = {
       ],
     },
   },
-  tags: ["autodocs"],
   argTypes: {
     type: {
       control: {

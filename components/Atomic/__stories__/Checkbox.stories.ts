@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import Checkbox from "../components/Atomic/Checkbox.vue";
+import Checkbox from "../Checkbox.vue";
 
 const meta = {
   title: "Atomic/Checkbox",
@@ -20,7 +20,6 @@ const meta = {
       ],
     },
   },
-  tags: ["autodocs"],
   argTypes: {
     checked: {
       control: {

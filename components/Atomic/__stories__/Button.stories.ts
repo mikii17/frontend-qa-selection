@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import Button from "../components/Atomic/Button.vue";
+import Button from "../Button.vue";
 
 const meta = {
   title: "Atomic/Button",
@@ -7,7 +7,6 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
   argTypes: {
     variant: {
       control: {

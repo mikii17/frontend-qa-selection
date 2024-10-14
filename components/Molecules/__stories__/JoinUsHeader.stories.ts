@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import Navbar from "../Navbar.vue";
+import JoinUsHeader from "../JoinUsHeader.vue";
 
 const meta = {
-  title: "Molecules/Navbar",
-  component: Navbar,
+  title: "Molecules/JoinUsHeader",
+  component: JoinUsHeader,
   parameters: {
     layout: "centered",
     backgrounds: {
@@ -20,11 +20,10 @@ const meta = {
       ],
     },
   },
-  tags: [],
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof JoinUsHeader>;
 
 export default meta;
-type Story = StoryObj<typeof Navbar>;
+type Story = StoryObj<typeof JoinUsHeader>;
 
 export const Default: Story = {
   args: {},
