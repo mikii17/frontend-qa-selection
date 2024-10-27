@@ -1,0 +1,41 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:verify": "cypress verify",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@storybook-vue/nuxt": "^8.3.1",
+    "cypress-xpath": "^2.0.1",
+    "nuxt": "^3.13.0",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@chromatic-com/cypress": "^0.8.0",
+    "@nuxtjs/storybook": "7.0.2",
+    "@storybook/addon-essentials": "8.3.5",
+    "@storybook/addon-interactions": "8.3.5",
+    "@storybook/addon-links": "8.3.5",
+    "@storybook/blocks": "8.3.5",
+    "@storybook/builder-vite": "8.3.5",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/vue3": "8.3.5",
+    "@types/node": "^18.17.5",
+    "chromatic": "^11.12.0",
+    "cypress": "^13.15.0",
+    "storybook": "8.3.5",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.8"
+  }
+}

@@ -1,0 +1,74 @@
+name: E2E Visual Regression Tests
+
+on: push
+
+jobs:
+  Cypress:
+    name: Run Cypress Tests
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node-20.17.0-chrome-128.0.6613.119-1-ff-130.0-edge-128.0.2739.63-1
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Generate .nuxt
+        run: pnpm nuxt generate
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        env:
+          ELECTRON_EXTRA_LAUNCH_ARGS: "--remote-debugging-port=9222"
+        with:
+          start: pnpm dev
+      - uses: actions/upload-artifact@v4
+        with:
+          # Chromatic automatically defaults to the cypress/downloads directory.
+          # Replace with the path to your custom directory and adjust the CHROMATIC_ARCHIVE_LOCATION environment variable accordingly.
+          name: test-results
+          path: ./cypress/downloads
+          retention-days: 30
+  e2e_visual_regression:
+    name: Run e2e Visual Regression
+    needs: Cypress
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Download Cypress test results
+        uses: actions/download-artifact@v4
+        with:
+          name: test-results
+          path: ./cypress/downloads
+
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          cypress: true
+          projectToken: ${{ secrets.CHROMATIC_E2E_PROJECT_TOKEN }}
+
+        # Optionally configure the archive location with env vars
+        env:
+          CHROMATIC_ARCHIVE_LOCATION: ./cypress/downloads
